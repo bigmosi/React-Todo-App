@@ -73,3 +73,9 @@ body {
   text-transform: lowercase;
   text-align: center;
 }
+
+.input-submit svg {
+  color: darkcyan;
+  font-size: 20px;
+  margin-top: 2px;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaTrash } from 'react-icons/fa';
 import styles from './TodoItem.module.css';
 
 /* eslint-disable react/prop-types */
@@ -57,7 +58,7 @@ class TodoItem extends React.Component {
               onChange={() => handleChangeProps(id)}
               className={styles.checkbox}
             />
-            <button type="button" onClick={() => deleteTodoProps(id)}>Delete</button>
+            <button type="button" aria-label="trash" style={{ color: 'orangered', fontSize: '16px' }} onClick={() => deleteTodoProps(id)}><FaTrash /></button>
             <span style={completed ? completedStyle : null}>
               {title}
             </span>
