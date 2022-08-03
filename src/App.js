@@ -1,12 +1,23 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import TodoContainer from './components/TodoContainer';
+import About from './pages/About';
+import NoMatch from './pages/NoMatch';
+import Navbar from './components/Navbar';
 
-const App = () => (
-  <BrowserRouter>
-    <Routes>
-      <Route index element={<TodoContainer />} />
-    </Routes>
-  </BrowserRouter>
-);
+function App() {
+  return (
+    <>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route index path="/" element={<TodoContainer />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<NoMatch />} />
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
+}
 
 export default App;
